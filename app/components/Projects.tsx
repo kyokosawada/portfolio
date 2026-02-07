@@ -32,7 +32,7 @@ const projects: Project[] = [
     techStack: ["Next.js", "React", "Tailwind"],
     liveUrl: "https://pulse-analytics.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/pulse-analytics",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    image: "https://picsum.photos/seed/dashboard/800/450",
   },
   {
     title: "Maison",
@@ -42,7 +42,7 @@ const projects: Project[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind"],
     liveUrl: "https://maison-store.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/maison-store",
-    image: "https://images.unsplash.com/photo-1515562141589-67f0d569b6d2?w=800&q=80",
+    image: "https://picsum.photos/seed/hero-jewelry1/800/450",
   },
   {
     title: "Hartwell & Associates",
@@ -52,7 +52,7 @@ const projects: Project[] = [
     techStack: ["Next.js", "Tailwind", "TypeScript"],
     liveUrl: "https://hartwell-associates.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/hartwell-associates",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    image: "https://picsum.photos/seed/hero-law/800/450",
   },
 ];
 
