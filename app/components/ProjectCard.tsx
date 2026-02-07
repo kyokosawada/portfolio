@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ProjectCardProps {
   title: string;
   category: string;
@@ -5,6 +7,7 @@ interface ProjectCardProps {
   techStack: string[];
   liveUrl: string;
   sourceUrl: string;
+  image: string;
 }
 
 export default function ProjectCard({
@@ -14,11 +17,19 @@ export default function ProjectCard({
   techStack,
   liveUrl,
   sourceUrl,
+  image,
 }: ProjectCardProps) {
   return (
     <div className="group bg-[#111111] border border-[#1e1e1e] rounded-xl overflow-hidden hover:border-[#2a2a2a] transition-all duration-300">
-      <div className="relative w-full aspect-video bg-[#0a0a0a] overflow-hidden">
-        <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#111111] group-hover:scale-105 transition-transform duration-500" />
+      <div className="relative w-full aspect-video overflow-hidden">
+        <Image
+          src={image}
+          alt={`${title} project preview`}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
       </div>
       <div className="p-6">
         <div className="flex justify-between items-center mb-3">

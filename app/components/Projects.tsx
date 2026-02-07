@@ -1,6 +1,8 @@
 import RevealOnScroll from "./RevealOnScroll";
 import ProjectCard from "./ProjectCard";
 
+import Image from "next/image";
+
 interface Project {
   title: string;
   category: string;
@@ -8,6 +10,7 @@ interface Project {
   techStack: string[];
   liveUrl: string;
   sourceUrl: string;
+  image: string;
 }
 
 const projects: Project[] = [
@@ -19,6 +22,7 @@ const projects: Project[] = [
     techStack: ["Next.js", "Tailwind", "TypeScript"],
     liveUrl: "https://ember-and-oak.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/ember-and-oak",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
   },
   {
     title: "Pulse Analytics",
@@ -28,6 +32,7 @@ const projects: Project[] = [
     techStack: ["Next.js", "React", "Tailwind"],
     liveUrl: "https://pulse-analytics.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/pulse-analytics",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   },
   {
     title: "Maison",
@@ -37,6 +42,7 @@ const projects: Project[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind"],
     liveUrl: "https://maison-store.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/maison-store",
+    image: "https://images.unsplash.com/photo-1515562141589-67f0d569b6d2?w=800&q=80",
   },
   {
     title: "Hartwell & Associates",
@@ -46,6 +52,7 @@ const projects: Project[] = [
     techStack: ["Next.js", "Tailwind", "TypeScript"],
     liveUrl: "https://hartwell-associates.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/hartwell-associates",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
   },
 ];
 
@@ -64,15 +71,16 @@ export default function Projects() {
             Featured Work
           </h2>
           <p className="text-[#a0a0a0] max-w-lg mb-12 md:mb-16">
-            A selection of showcase sites built to demonstrate modern web
-            development capabilities.
+            These are sample projects I&apos;ve built to showcase what I can create
+            for your business. Each one demonstrates the kind of quality, polish, and
+            attention to detail you can expect when working with me.
           </p>
         </RevealOnScroll>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <RevealOnScroll key={project.title} delay={i * 150}>
-              <ProjectCard {...project} liveUrl={project.liveUrl} sourceUrl={project.sourceUrl} />
+              <ProjectCard {...project} />
             </RevealOnScroll>
           ))}
         </div>
