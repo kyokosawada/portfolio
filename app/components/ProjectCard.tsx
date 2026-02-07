@@ -3,6 +3,8 @@ interface ProjectCardProps {
   category: string;
   description: string;
   techStack: string[];
+  liveUrl: string;
+  sourceUrl: string;
 }
 
 export default function ProjectCard({
@@ -10,6 +12,8 @@ export default function ProjectCard({
   category,
   description,
   techStack,
+  liveUrl,
+  sourceUrl,
 }: ProjectCardProps) {
   return (
     <div className="group bg-[#111111] border border-[#1e1e1e] rounded-xl overflow-hidden hover:border-[#2a2a2a] transition-all duration-300">
@@ -21,15 +25,12 @@ export default function ProjectCard({
           <span className="text-xs font-medium text-[#14b8a6] uppercase tracking-wider">
             {category}
           </span>
-          <span className="text-[#666666] group-hover:text-[#14b8a6] group-hover:translate-x-1 transition-all duration-300" aria-hidden="true">
-            &rarr;
-          </span>
         </div>
         <h3 className="text-lg font-semibold text-[#ededed] mb-2">{title}</h3>
         <p className="text-sm text-[#a0a0a0] leading-relaxed mb-4">
           {description}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mb-5">
           {techStack.map((tech) => (
             <span
               key={tech}
@@ -38,6 +39,25 @@ export default function ProjectCard({
               {tech}
             </span>
           ))}
+        </div>
+        <div className="flex gap-3">
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#14b8a6] hover:text-[#2dd4bf] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#14b8a6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] rounded"
+          >
+            View Site
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a
+            href={sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-[#666666] hover:text-[#a0a0a0] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#14b8a6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111111] rounded"
+          >
+            Source Code
+          </a>
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ interface Project {
   category: string;
   description: string;
   techStack: string[];
+  liveUrl: string;
+  sourceUrl: string;
 }
 
 const projects: Project[] = [
@@ -15,6 +17,8 @@ const projects: Project[] = [
     description:
       "An upscale dining experience with online reservations, seasonal menus, and an immersive gallery showcasing the ambiance.",
     techStack: ["Next.js", "Tailwind", "TypeScript"],
+    liveUrl: "https://ember-and-oak.vercel.app",
+    sourceUrl: "https://github.com/kyokosawada/ember-and-oak",
   },
   {
     title: "Pulse Analytics",
@@ -22,6 +26,8 @@ const projects: Project[] = [
     description:
       "A conversion-focused landing page for a startup analytics platform, featuring interactive demos and tiered pricing.",
     techStack: ["Next.js", "React", "Tailwind"],
+    liveUrl: "https://pulse-analytics.vercel.app",
+    sourceUrl: "https://github.com/kyokosawada/pulse-analytics",
   },
   {
     title: "Maison",
@@ -29,6 +35,8 @@ const projects: Project[] = [
     description:
       "A luxury jewelry storefront with curated collections, smooth product filtering, and a refined shopping experience.",
     techStack: ["Next.js", "TypeScript", "Tailwind"],
+    liveUrl: "https://maison-store.vercel.app",
+    sourceUrl: "https://github.com/kyokosawada/maison-store",
   },
   {
     title: "Hartwell & Associates",
@@ -36,6 +44,8 @@ const projects: Project[] = [
     description:
       "A sophisticated web presence for a law firm, highlighting attorney profiles, practice areas, and client testimonials.",
     techStack: ["Next.js", "Tailwind", "TypeScript"],
+    liveUrl: "https://hartwell-associates.vercel.app",
+    sourceUrl: "https://github.com/kyokosawada/hartwell-associates",
   },
 ];
 
@@ -62,7 +72,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <RevealOnScroll key={project.title} delay={i * 150}>
-              <ProjectCard {...project} />
+              <ProjectCard {...project} liveUrl={project.liveUrl} sourceUrl={project.sourceUrl} />
             </RevealOnScroll>
           ))}
         </div>
