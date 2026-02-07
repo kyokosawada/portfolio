@@ -20,7 +20,7 @@ const projects: Project[] = [
     description:
       "An upscale dining experience with online reservations, seasonal menus, and an immersive gallery showcasing the ambiance.",
     techStack: ["Next.js", "Tailwind", "TypeScript"],
-    liveUrl: "https://ember-and-oak.vercel.app",
+    liveUrl: "https://ember-and-oak-eight.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/ember-and-oak",
     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
   },
@@ -30,7 +30,7 @@ const projects: Project[] = [
     description:
       "A conversion-focused landing page for a startup analytics platform, featuring interactive demos and tiered pricing.",
     techStack: ["Next.js", "React", "Tailwind"],
-    liveUrl: "https://pulse-analytics.vercel.app",
+    liveUrl: "https://pulse-analytics-gamma.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/pulse-analytics",
     image: "https://picsum.photos/seed/dashboard/800/450",
   },
@@ -40,7 +40,7 @@ const projects: Project[] = [
     description:
       "A luxury jewelry storefront with curated collections, smooth product filtering, and a refined shopping experience.",
     techStack: ["Next.js", "TypeScript", "Tailwind"],
-    liveUrl: "https://maison-store.vercel.app",
+    liveUrl: "https://maison-store-black.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/maison-store",
     image: "https://picsum.photos/seed/hero-jewelry1/800/450",
   },
@@ -50,7 +50,7 @@ const projects: Project[] = [
     description:
       "A sophisticated web presence for a law firm, highlighting attorney profiles, practice areas, and client testimonials.",
     techStack: ["Next.js", "Tailwind", "TypeScript"],
-    liveUrl: "https://hartwell-associates.vercel.app",
+    liveUrl: "https://hartwell-associates-nine.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/hartwell-associates",
     image: "https://picsum.photos/seed/hero-law/800/450",
   },
