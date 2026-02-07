@@ -1,0 +1,50 @@
+import type { Metadata } from "next";
+import { Inter, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Giusippi Maria II D. Apa — Freelance Web Developer",
+  description:
+    "Freelance web developer specializing in modern, polished web experiences built with Next.js, React, and Tailwind CSS.",
+  keywords: [
+    "freelance web developer",
+    "Next.js",
+    "React",
+    "portfolio",
+    "web development",
+  ],
+  openGraph: {
+    title: "Giusippi Maria II D. Apa — Freelance Web Developer",
+    description:
+      "Building modern, polished web experiences for businesses that want to stand out.",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
+        <a href="#main-content" className="skip-to-content">
+          Skip to content
+        </a>
+        {children}
+      </body>
+    </html>
+  );
+}
