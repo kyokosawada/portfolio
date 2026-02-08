@@ -8,12 +8,14 @@ const skills = [
   "Tailwind CSS",
   "JavaScript",
   "Node.js",
-  "HTML5",
-  "CSS3",
+  "Google Gemini AI",
+  "Claude Code",
+  "Cursor",
+  "Zod",
+  "REST APIs",
   "Git",
   "Vercel",
-  "REST APIs",
-  "Figma",
+  "Recharts",
 ];
 
 export default function Skills() {

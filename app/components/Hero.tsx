@@ -19,14 +19,14 @@ export default function Hero() {
         className="text-xl md:text-2xl font-medium text-[#a0a0a0] mb-6 opacity-0"
         style={{ animation: "fade-in-up 600ms ease-out 200ms forwards" }}
       >
-        Freelance Web Developer
+        AI Developer &amp; Web Engineer
       </p>
       <p
         className="text-base md:text-lg text-[#666666] max-w-lg mx-auto mb-10 opacity-0"
         style={{ animation: "fade-in-up 600ms ease-out 300ms forwards" }}
       >
-        Building modern, polished web experiences for businesses that want to
-        stand out.
+        Building AI-powered applications and modern web experiences with
+        Gemini, Claude Code, and Next.js.
       </p>
       <a
         href="#projects"

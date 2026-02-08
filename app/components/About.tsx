@@ -1,9 +1,9 @@
 import RevealOnScroll from "./RevealOnScroll";
 
 const highlights = [
-  { label: "4+ Project Types", description: "Restaurants, SaaS, E-Commerce, Professional" },
-  { label: "Modern Stack", description: "Next.js, React, Tailwind CSS" },
-  { label: "Pixel-Perfect", description: "Responsive across all devices" },
+  { label: "9 Projects", description: "AI SaaS, Restaurants, E-Commerce, Professional" },
+  { label: "AI-Powered", description: "Gemini AI, Vision APIs, Structured Output" },
+  { label: "Modern Stack", description: "Next.js 16, React 19, Tailwind v4" },
 ];
 
 export default function About() {
@@ -21,16 +21,16 @@ export default function About() {
             <div className="w-12 h-0.5 bg-[#14b8a6] mt-2 mb-6" />
             <div className="text-[#a0a0a0] leading-relaxed space-y-4">
               <p>
-                I&apos;m a freelance web developer who partners with businesses
-                to build compelling web experiences. From sleek landing pages to
-                full-featured web applications, I bring ideas to life with clean
-                code and thoughtful design.
+                I&apos;m a developer who builds AI-powered web applications and
+                polished digital experiences. From intelligent SaaS platforms
+                with Gemini AI integration to sleek business websites, I bring
+                ideas to life with clean code and thoughtful design.
               </p>
               <p>
-                My focus is on modern frameworks, clean architecture, and
-                meticulous attention to detail. Every project is built to be
-                fast, accessible, and visually polished — because first
-                impressions matter.
+                My focus is on AI-assisted development, modern frameworks, and
+                shipping fast. I leverage tools like Claude Code and Cursor to
+                build production-ready applications — combining AI capabilities
+                with solid engineering fundamentals.
               </p>
             </div>
           </RevealOnScroll>
