@@ -1,7 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import RevealOnScroll from "./RevealOnScroll";
 import ProjectCard from "./ProjectCard";
-
-import Image from "next/image";
 
 interface Project {
   title: string;
@@ -13,7 +14,7 @@ interface Project {
   image: string;
 }
 
-const projects: Project[] = [
+const aiProjects: Project[] = [
   {
     title: "AI Analytics Dashboard",
     category: "AI / SaaS",
@@ -64,6 +65,9 @@ const projects: Project[] = [
     sourceUrl: "https://github.com/kyokosawada/ai-resume-screener",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
   },
+];
+
+const webProjects: Project[] = [
   {
     title: "Ember & Oak",
     category: "Restaurant",
@@ -106,7 +110,16 @@ const projects: Project[] = [
   },
 ];
 
+const tabs = [
+  { id: "ai", label: "AI Applications", count: aiProjects.length, projects: aiProjects },
+  { id: "web", label: "Web Design", count: webProjects.length, projects: webProjects },
+] as const;
+
 export default function Projects() {
+  const [activeTab, setActiveTab] = useState<string>("ai");
+
+  const currentTab = tabs.find((t) => t.id === activeTab) ?? tabs[0];
+
   return (
     <section
       id="projects"
@@ -120,20 +133,60 @@ export default function Projects() {
           <h2 className="text-3xl md:text-4xl font-bold text-[#ededed] mb-4 leading-[1.2] tracking-[-0.01em]">
             Featured Work
           </h2>
-          <p className="text-[#a0a0a0] max-w-lg mb-12 md:mb-16">
-            These are sample projects I&apos;ve built to showcase what I can create
-            for your business. Each one demonstrates the kind of quality, polish, and
-            attention to detail you can expect when working with me.
+          <p className="text-[#a0a0a0] max-w-lg mb-8 md:mb-10">
+            A selection of projects demonstrating AI integration, full-stack
+            development, and polished web design.
           </p>
         </RevealOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, i) => (
-            <RevealOnScroll key={project.title} delay={i * 150}>
+        {/* Tabs */}
+        <div className="flex gap-2 mb-8 md:mb-10">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`
+                px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300
+                ${
+                  activeTab === tab.id
+                    ? "bg-[#14b8a6] text-[#0a0a0a]"
+                    : "bg-[#111111] text-[#a0a0a0] border border-[#1e1e1e] hover:border-[#2a2a2a] hover:text-[#ededed]"
+                }
+              `}
+            >
+              {tab.label}
+              <span
+                className={`ml-2 text-xs px-1.5 py-0.5 rounded-full ${
+                  activeTab === tab.id
+                    ? "bg-[#0a0a0a]/20 text-[#0a0a0a]"
+                    : "bg-[#1e1e1e] text-[#666666]"
+                }`}
+              >
+                {tab.count}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* Project Grid */}
+        <div
+          key={activeTab}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          style={{ animation: "fade-in-up 400ms ease-out forwards" }}
+        >
+          {currentTab.projects.map((project, i) => (
+            <RevealOnScroll key={project.title} delay={i * 100}>
               <ProjectCard {...project} />
             </RevealOnScroll>
           ))}
         </div>
+
+        {/* Tab summary */}
+        <p className="text-center text-sm text-[#666666] mt-8">
+          {activeTab === "ai"
+            ? "Built with Google Gemini AI, structured output via Zod, and real-time data processing."
+            : "Pixel-perfect responsive designs with smooth animations and modern aesthetics."}
+        </p>
       </div>
     </section>
   );
