@@ -10,7 +10,6 @@ const skills = [
   "Node.js",
   "Google Gemini AI",
   "Claude Code",
-  "Cursor",
   "Zod",
   "REST APIs",
   "Git",
