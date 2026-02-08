@@ -20,7 +20,7 @@ const projects: Project[] = [
     description:
       "Upload any dataset (CSV, Excel, JSON) and get instant AI-powered charts, summary statistics, and natural language queries via Gemini 2.5 Flash.",
     techStack: ["Next.js", "Gemini AI", "Recharts", "Zod"],
-    liveUrl: "#",
+    liveUrl: "https://ai-analytics-dashboard-beta.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/ai-analytics-dashboard",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   },
@@ -30,7 +30,7 @@ const projects: Project[] = [
     description:
       "Import customer reviews and get AI-powered sentiment analysis, theme extraction, and actionable reports with batch processing.",
     techStack: ["Next.js", "Gemini AI", "Recharts", "Zod"],
-    liveUrl: "#",
+    liveUrl: "https://ai-feedback-analyzer-lake.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/ai-feedback-analyzer",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
   },
@@ -40,7 +40,7 @@ const projects: Project[] = [
     description:
       "Upload receipt images and PDFs — Gemini Vision extracts vendor, totals, and line items. Includes spending dashboards and category tracking.",
     techStack: ["Next.js", "Gemini Vision", "Recharts", "Zod"],
-    liveUrl: "#",
+    liveUrl: "https://ai-invoice-processor-wine.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/ai-invoice-processor",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
   },
@@ -50,7 +50,7 @@ const projects: Project[] = [
     description:
       "Manage contacts and deals with a Kanban pipeline, AI-powered lead scoring, smart follow-up drafts, and relationship insights.",
     techStack: ["Next.js", "Gemini AI", "DnD", "Recharts"],
-    liveUrl: "#",
+    liveUrl: "https://ai-crm-assistant.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/ai-crm-assistant",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
   },
@@ -60,7 +60,7 @@ const projects: Project[] = [
     description:
       "Paste job descriptions, upload PDF resumes, and let AI rank candidates with skill matching, gap analysis, and interview question generation.",
     techStack: ["Next.js", "Gemini AI", "pdf-parse", "Zod"],
-    liveUrl: "#",
+    liveUrl: "https://ai-resume-screener-nine.vercel.app",
     sourceUrl: "https://github.com/kyokosawada/ai-resume-screener",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
   },
