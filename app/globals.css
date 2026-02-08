@@ -77,3 +77,8 @@ body {
 .skip-to-content:focus {
   top: 1rem;
 }
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

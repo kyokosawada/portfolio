@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import RevealOnScroll from "./RevealOnScroll";
 import ProjectCard from "./ProjectCard";
 
@@ -117,8 +117,35 @@ const tabs = [
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState<string>("ai");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const currentTab = tabs.find((t) => t.id === activeTab) ?? tabs[0];
+
+  // Reset carousel position when switching tabs
+  useEffect(() => {
+    setActiveIndex(0);
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  }, [activeTab]);
+
+  // Track which card is visible via scroll position
+  const handleScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.scrollWidth / currentTab.projects.length;
+    const index = Math.round(el.scrollLeft / cardWidth);
+    setActiveIndex(Math.min(index, currentTab.projects.length - 1));
+  }, [currentTab.projects.length]);
+
+  // Scroll to a specific card when tapping a dot
+  const scrollToIndex = (index: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.scrollWidth / currentTab.projects.length;
+    el.scrollTo({ left: cardWidth * index, behavior: "smooth" });
+  };
 
   return (
     <section
@@ -168,10 +195,10 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Project Grid */}
+        {/* Desktop: 2-column grid */}
         <div
-          key={activeTab}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          key={`desktop-${activeTab}`}
+          className="hidden md:grid md:grid-cols-2 gap-6"
           style={{ animation: "fade-in-up 400ms ease-out forwards" }}
         >
           {currentTab.projects.map((project, i) => (
@@ -179,6 +206,53 @@ export default function Projects() {
               <ProjectCard {...project} />
             </RevealOnScroll>
           ))}
+        </div>
+
+        {/* Mobile: Swipeable carousel */}
+        <div className="md:hidden" key={`mobile-${activeTab}`}>
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 pb-4"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch",
+            }}
+          >
+            {currentTab.projects.map((project) => (
+              <div
+                key={project.title}
+                className="snap-center shrink-0 w-[85vw] max-w-[340px]"
+              >
+                <ProjectCard {...project} />
+              </div>
+            ))}
+          </div>
+
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-2 mt-4">
+            {currentTab.projects.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollToIndex(i)}
+                aria-label={`Go to project ${i + 1}`}
+                className={`
+                  rounded-full transition-all duration-300
+                  ${
+                    activeIndex === i
+                      ? "w-6 h-2 bg-[#14b8a6]"
+                      : "w-2 h-2 bg-[#333333] hover:bg-[#555555]"
+                  }
+                `}
+              />
+            ))}
+          </div>
+
+          {/* Swipe hint */}
+          <p className="text-center text-xs text-[#666666] mt-3">
+            Swipe to explore &middot; {activeIndex + 1} of {currentTab.projects.length}
+          </p>
         </div>
 
         {/* Tab summary */}
